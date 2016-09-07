@@ -81,7 +81,7 @@ static std::string GetFullPathNameWrap(const std::string &f)
 
 static bool IsParameterTypeSpecifier(char c) {
   switch (c) {
-    case 'b': case 'i': case 'f': case 's': case 'c': case '.': case 'd':
+    case 'b': case 'i': case 'f': case 's': case 'c': case '.':
       return true;
     default:
       return false;
@@ -277,7 +277,7 @@ bool AVSFunction::TypeMatch(const char* param_types, const AVSValue* args, size_
     }
 
     switch (*param_types) {
-      case 'b': case 'i': case 'f': case 's': case 'c':
+      case 'b': case 'i': case 'f': case 's': case 'c': 
         if (   (!optional || args[i].Defined())
             && !SingleTypeMatch(*param_types, args[i], strict))
           return false;
